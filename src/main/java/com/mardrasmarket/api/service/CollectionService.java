@@ -19,6 +19,12 @@ public class CollectionService {
 	public List<Collection> getCollections() {
 		return  (List<Collection>) collectionRepository.findAll();
 	}
+
+	public Collection registerCollection(Collection collection) {
+		
+		 return collectionRepository.save(collection);
+//		 (collection.getCollection_name());
+	}
 	
 	
 

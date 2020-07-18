@@ -14,11 +14,6 @@ public class UserRepository {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
-	/*
-	 * @Query( value =
-	 * "INSERT INTO [USER] (first_name ,email_id ,phone_number ,password ) VALUES (':firstName',':emailId',':phoneNumber',':password')"
-	 * , nativeQuery = true)
-	 */
 	public int insertUser(String firstName, String emailId, String phoneNumber, String password) {
 		return jdbcTemplate.update( "INSERT INTO [USER] (first_name ,email_id ,phone_number ,password ) VALUES (?,?,?,?)",
 				firstName,emailId,phoneNumber,password);
